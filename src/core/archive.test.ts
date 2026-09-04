@@ -94,6 +94,8 @@ describe("parseSaveArchive", () => {
       isSystemEntry: false,
     });
     expect(archive.entries[1].isSystemEntry).toBe(true);
+    expect(archive.records[0].strideBytes.buffer).toBe(archive.originalBytes.buffer);
+    expect(archive.records[0].data.buffer).toBe(archive.originalBytes.buffer);
     expect(fixture.every((value, index) => value === before[index])).toBe(true);
   });
 

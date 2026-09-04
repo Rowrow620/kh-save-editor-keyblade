@@ -20,7 +20,7 @@ export interface SaveEntry {
   readonly isEmpty: boolean;
 }
 
-interface ArchiveEntryRecord extends SaveEntry {
+export interface ArchiveEntryRecord extends SaveEntry {
   readonly plainHeader: Uint8Array;
   readonly strideBytes: Uint8Array;
   readonly data: Uint8Array;
@@ -134,7 +134,7 @@ export function parseSaveArchive(
   fileName = "unknown.png",
 ): SaveArchiveDocument {
   const inputBytes = input instanceof Uint8Array ? input : new Uint8Array(input);
-  const bytes = inputBytes.slice();
+  const bytes = input instanceof Uint8Array ? inputBytes.slice() : inputBytes;
   const format = detectSaveFormat(bytes.byteLength);
 
   if (!arraysEqual(bytes.subarray(0, PNG_SIGNATURE.byteLength), PNG_SIGNATURE)) {
@@ -180,8 +180,8 @@ export function parseSaveArchive(
     }
 
     const dataOffset = tableEnd + archiveIndex * format.stride;
-    const strideBytes = bytes.slice(dataOffset, dataOffset + format.stride);
-    const data = strideBytes.slice(0, dataLength);
+    const strideBytes = bytes.subarray(dataOffset, dataOffset + format.stride);
+    const data = strideBytes.subarray(0, dataLength);
     const isEmpty = name.length === 0 && dataLength === 0;
 
     records.push({
