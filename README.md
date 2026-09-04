@@ -2,7 +2,7 @@
 
 A browser-based save editor and transfer tool for the PC versions of the Kingdom Hearts Final Mix collection.
 
-[Open the editor](https://rowrow620.github.io/kh-save-editor-keyblade/)
+[![Edit Saves in Your Browser](https://img.shields.io/badge/Edit_Saves-In_Your_Browser-D6BD72?style=for-the-badge&logo=googlechrome&logoColor=white)](https://rowrow620.github.io/kh-save-editor-keyblade/)
 
 ## Current support
 
