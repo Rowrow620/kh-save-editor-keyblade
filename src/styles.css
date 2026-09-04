@@ -61,7 +61,7 @@ button {
   margin: 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.7rem, 7vw, 5.6rem);
+  font-size: clamp(2.35rem, 5.5vw, 4.4rem);
   font-weight: 500;
   line-height: 0.9;
   letter-spacing: 0.12em;
