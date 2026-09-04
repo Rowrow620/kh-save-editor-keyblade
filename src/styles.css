@@ -50,9 +50,10 @@ button {
 
 .brand-title {
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  gap: clamp(12px, 2.5vw, 28px);
+  gap: 6px;
   text-align: center;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
 }
@@ -77,7 +78,7 @@ button {
 }
 
 .brand-icon {
-  width: clamp(88px, 13vw, 142px);
+  width: clamp(78px, 9vw, 108px);
   height: auto;
   flex: 0 0 auto;
   filter:
